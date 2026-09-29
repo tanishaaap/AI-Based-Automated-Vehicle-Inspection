@@ -1,0 +1,68 @@
+# AUTOMOTIVE PANEL GAP STANDARDS & QUALITY GUIDANCE
+
+## 1. Executive Summary & Purpose
+Panel gaps (also known as flush and part-to-part gaps) are critical quality metrics in automotive manufacturing and body shop repair. Consistent, uniform panel gaps dictate perceived build quality, aerodynamic performance, wind noise reduction, and structural sealing against moisture and debris. 
+
+This document outlines industry-standard tolerance ranges for exterior body panels, classifies deviations by severity, and details the primary mechanical and assembly root causes for out-of-spec measurements.
+
+---
+
+## 2. Acceptable Panel Gap Ranges (Standard Specifications)
+Modern automotive manufacturing typically targets a nominal gap width of $3.0\text{ mm}$ to $5.0\text{ mm}$ depending on the vehicle class, segment, and specific body joint location. Aesthetic tolerances are exceptionally strict, often requiring deviations of less than $\pm 0.5\text{ mm}$ across production runs.
+
+### Standard Gap Matrix by Body Zone:
+*   **Hood-to-Fender / Bonnet Seams:** 
+    *   *Nominal Range:* $3.5\text{ mm} - 4.5\text{ mm}$
+    *   *Max Allowable Deviation:* $\pm 0.5\text{ mm}$
+*   **Door-to-Door (Beltline & Center Pillar):** 
+    *   *Nominal Range:* $4.0\text{ mm} - 5.0\text{ mm}$
+    *   *Max Allowable Deviation:* $\pm 0.6\text{ mm}$
+*   **Door-to-Fender / Quarter Panel:** 
+    *   *Nominal Range:* $3.5\text{ mm} - 4.5\text{ mm}$
+    *   *Max Allowable Deviation:* $\pm 0.5\text{ mm}$
+*   **Tailgate / Trunk-to-Quarter Panel:** 
+    *   *Nominal Range:* $3.0\text{ mm} - 5.0\text{ mm}$
+    *   *Max Allowable Deviation:* $\pm 0.8\text{ mm}$
+*   **Fascia-to-Fender (Bumper Covers):** 
+    *   *Nominal Range:* $1.5\text{ mm} - 3.0\text{ mm}$ (Flexible plastic tolerances allow tighter initial fit, though thermal expansion must be accounted for).
+
+---
+
+## 3. Classification of Gap Deviations
+When automated computer vision systems (such as the `panel_gap_inspector.py` script) or physical feeler gauges measure a gap, deviations are categorized into three operational tiers:
+
+1.  **Within Tolerance (Normal / Pass):** 
+    *   *Condition:* Deviation from nominal target is within $\pm 0.5\text{ mm}$.
+    *   *Action:* No intervention required. Meets factory finish guidelines.
+2.  **Minor Deviation (Cosmetic Adjustment):** 
+    *   *Condition:* Deviation is between $0.6\text{ mm}$ and $1.5\text{ mm}$ off nominal, or exhibits minor taper ($\Delta$ gap top-to-bottom $> 0.8\text{ mm}$).
+    *   *Action:* Bolt loosening and hinge/striker adjustment. No sheet metal reshaping required.
+3.  **Major Deviation (Structural / Repair Needed):** 
+    *   *Condition:* Deviation exceeds $1.5\text{ mm}$ from nominal, overlapping panels (zero or negative gap), or wide flared gaps ($> 6.5\text{ mm}$).
+    *   *Action:* Indicates underlying structural chassis misalignment, improper frame pull post-collision, or distorted mounting brackets requiring professional body shop intervention.
+
+---
+
+## 4. Root Causes of Panel Gap Deviation
+
+Deviations from standard gap ranges typically stem from four major categories: assembly variance, post-collision frame distortion, thermal effects, and hardware wear.
+
+### A. Post-Collision Structural Distortion (Accident Damage)
+*   **Chassis Rail Misalignment:** Side impacts or frontal collisions transfer energy directly through longitudinal frame rails and aprons, shifting hinge pillars out of square.
+*   **Cowl and Core Support Displacement:** Front-end collisions push radiator core supports rearward, compressing hood gaps and forcing fenders outward.
+*   **Pillar and Quarter Panel Shift:** Rear-end or T-bone collisions compromise B-pillar and C-pillar rigidity, resulting in jammed doors or tapered gaps where the door sags under gravity.
+
+### B. Assembly and Adjuster Variance (Factory or Body Shop Error)
+*   **Improper Hinge Torque & Shimming:** Door and hood hinges utilize slotted bolt holes for multi-axis adjustment ($X, Y, Z$). Under-torqued bolts allow panels to sag over time due to inertial slamming and gravity.
+*   **Misaligned Striker Plates:** Adjusting door latches too deep or too shallow forces the trailing edge of the door flush or unflush relative to the quarter panel, pinching or opening the forward seam.
+*   **Aftermarket Replacement Parts:** Non-OEM (Original Equipment Manufacturer) body panels frequently lack strict stamping fidelity, featuring dimensional variances of $1.0\text{ mm}$ to $3.0\text{ mm}$ along edge flanges.
+
+### C. Thermal Expansion and Material Stress
+*   **Stamping Residual Stresses:** High-strength steels and aluminum alloys retain internal stresses from the stamping press. Rapid ambient temperature swings can cause springback or warping in large unsupported panels (e.g., roof skins and long hood panels).
+
+---
+
+## 5. Corrective Actions and Remediation Guidelines
+*   **Hinge Adjustment:** Loosen hinge-to-body bolts slightly, shift panel using a soft alignment wedge to target gap, and torque bolts to manufacturer specifications (typically $25 - 35\text{ Nm}$).
+*   **Striker Tuning:** Adjust latch striker inward/outward to eliminate wind noise and ensure flush aerodynamic transition across door seams.
+*   **Structural Pulling:** For gaps caused by chassis deformation, utilize hydraulic frame-straightening benches with laser measurement systems to return anchor points to factory CAD coordinates prior to panel hanging.

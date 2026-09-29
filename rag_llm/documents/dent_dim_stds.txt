@@ -1,0 +1,19 @@
+# AUTOMOTIVE DENT DIMENSIONING & STRUCTURAL ASSESSMENT
+
+## 1. Overview & Classification Criteria
+Dents represent localized plastic deformation of vehicle body sheet metal resulting from impact forces (hail, parking lot incidents, road debris)[cite: 5]. Accurate measurement of dent geometry determines whether a defect can be resolved via Paintless Dent Repair (PDR) or requires traditional body filler and repainting[cite: 5].
+
+- **Minor Dents (PDR Candidates):**
+  - Diameter/Width: < 50 mm (approx. 2 inches)[cite: 5].
+  - Depth-to-Width Ratio: Shallow depth without sharp creases or paint cracking[cite: 5].
+  - Repair Action: Paintless Dent Repair (PDR) using specialized metal rods and glue tabs to massage the metal back to its original contour from behind[cite: 5].
+
+- **Severe Dents (Body Shop / Panel Replacement):**
+  - Diameter/Width: > 50 mm, or involving sharp creases ("deep-crease" dents), double-walled panels, or structural reinforcement members[cite: 5].
+  - Paint Integrity: Accompanied by paint chipping, cracking, or exposed bare metal[cite: 5].
+  - Repair Action: Stud welding, pulling, traditional body filler (Bondo), primer application, and full panel painting or complete panel replacement[cite: 5].
+
+## 2. Computer Vision Measurement Pipeline
+- Object Detection & Confidence: Utilizing deep learning models (such as YOLOv8 trained on defect datasets) to bound dent regions under optimal confidence thresholds (e.g., $\ge 0.15$)[cite: 1, 5].
+- Pixel-to-Millimeter Conversion: Multiplying bounding box pixel dimensions ($W_{pixels} \times H_{pixels}$) by a calibrated spatial conversion factor (`PIXEL_TO_MM`, e.g., $0.05 \text{ mm/pixel}$) to compute real-world metric dimensions ($W_{mm} \times H_{mm}$)[cite: 1, 5].
+- Visualization & Logging: Automatically calculating the centroid $(center_x, center_y)$ and overlaying bounding boxes, dimension labels, and confidence metrics onto inspection images for automated quality control logs[cite: 1, 5].

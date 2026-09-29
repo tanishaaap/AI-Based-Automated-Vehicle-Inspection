@@ -1,0 +1,23 @@
+# CAR SCRATCH SEVERITY CLASSIFICATION & REPAIR GUIDANCE
+
+## 1. Scratch Morphology & Layer Classification
+Automotive paint finishes consist of multiple layers: Electrocoat, Primer, Basecoat (color), and Clearcoat. Scratch severity is determined by which layers have been penetrated:
+
+- **Clearcoat Scratches (Cosmetic / Light):** 
+  - Depth: < 20–30 µm (confined entirely to the transparent protective top layer)[cite: 6].
+  - Visual Characteristics: Appears whitish or faint; disappears temporarily when wiped with isopropyl alcohol or water. Does not catch a fingernail[cite: 6].
+  - Repair Action: Machine polishing, compounding, or light wet sanding (P2000–P3000) followed by buffing. No touch-up paint required[cite: 6].
+
+- **Basecoat / Color Layer Scratches (Moderate):**
+  - Depth: 30 µm to 80 µm (penetrates clearcoat into the pigmented color layer)[cite: 6].
+  - Visual Characteristics: Displays the distinct car color or primer backing; catches a fingernail moderately[cite: 6].
+  - Repair Action: Requires touch-up basecoat application, clearcoat leveling, and localized blending. Spot painting may be necessary for aesthetic perfection[cite: 6].
+
+- **Primer / Substrate Scratches (Severe / Repair-Needed):**
+  - Depth: > 80 µm to bare metal/plastic substrate[cite: 6].
+  - Visual Characteristics: Exposes dull gray/white primer, bare steel (silver/rust-prone), or black plastic bumper substrate. Catches a fingernail sharply[cite: 6].
+  - Repair Action: Full panel prep, priming, basecoat spraying, and clearcoat application. Leaving bare metal exposed leads to oxidation and corrosion creep[cite: 6].
+
+## 2. Computer Vision & Automated Assessment
+- Bounding Boxes vs. Segmentation Masks: Bounding box detection provides fast localization for triage, whereas instance segmentation yields precise pixel area contours ($px^2$) required for accurate paint volume estimation and severity scoring[cite: 6].
+- Calibration Requirement: Converting pixel areas to physical square millimeters ($mm^2$) necessitates spatial calibration targets (such as ArUco markers or known reference scales) to prevent erroneous estimates caused by camera distance variations[cite: 6].

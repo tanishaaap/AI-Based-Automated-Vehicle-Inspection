@@ -1,22 +1,3 @@
-Yes. Your GitHub repository is already created and the project files are uploaded. You just need to add a **`README.md`** to the root of the repository.
-
-Since your project is an **AI-Based Automated Vehicle Inspection System**, I recommend making the README professional and focused on your actual implemented modules.
-
-### 1. Click **Add file → Create new file**
-
-At the top of your repository, click:
-
-**Add file → Create new file**
-
-For the filename, enter:
-
-```text
-README.md
-```
-
-### 2. Paste this README
-
-````markdown
 # AI-Based Automated Vehicle Inspection System
 
 An AI-based vehicle inspection system that uses computer vision, deep learning, image processing, and RAG-based reporting to detect and quantify vehicle defects from images.
